@@ -1,0 +1,179 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title th:text="${currentUser.surname} + ' ' + ${currentUser.name}">Profil name</title>
+
+        <link th:href="@{/css/bootstrap.min.css}" href="../../public/css/bootstrap.min.css" rel="stylesheet">
+        <link th:href="@{/css/profil.css}" href="../../public/css/profil.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script type = "text/javascript" th:src = "@{/lib/jquery.min.js}" src = "../../public/lib/jquery.min.js"></script>
+        <script type = "text/javascript" th:src = "@{/libs/jquery.validate.min.js}" src ="../../public/lib/jquery.validate.min.js"></script>
+        <script type = "text/javascript" th:src = "@{/libs/bootstrap.min.js}" src = "../../public/lib/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+    <div class="container">
+        <!--background photo, user photo, name-->
+        <div id="profileTop">
+            <div id="backgroundImageWrapper">
+            <img id = "backgroundImage" src="http://placehold.it/2000x500" alt="...">
+            </div>
+            <img id = "profileImage" src="http://placehold.it/200x200" alt="..." class="img-thumbnail">
+            <div id = "profileNameWrapper">
+                <span id = "profileName" th:text = "${currentUser.surname} + ' ' + ${currentUser.name}">Name Surname</span>
+
+                <div th:if="${currentUser.isProfileOwner()}"  id = "editName" class="hidden">
+                    <form>
+                        <input class = "form-control" type="text" placeholder="Your name and surname">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--menu under background photo-->
+        <div id="profileMenu">
+            <div id="optionWrapper">
+                <div class = "menuOption">Option 1</div>
+                <div class = "menuOption">Option 2</div>
+                <div class = "menuOption">Option 3</div>
+                <div class = "menuOption">Option 4</div>
+            </div>
+        </div>
+        <!--panels-->
+        <div class="row">
+            <!--leftPanels-->
+            <div class="leftPanels col-md-4">
+
+                <div class="panel">
+                    <div class="panelTitle leftPanelTitle ">
+                        <div class="floatLeft">
+                            <img src="http://placehold.it/30x30" alt="..." class="img-circle">
+                        </div>
+                        <div class="floatLeft">
+                            <h4>Photos</h4>
+                        </div>
+                        <div style="clear:both"></div>
+
+                        <div class="leftPhotoPanel">
+                            <div class="floatLeft leftPhotoPanelPhoto">
+                                <img src="http://placehold.it/150x150" alt="..." >
+                            </div>
+                            <div class="floatLeft leftPhotoPanelPhoto">
+                                <img src="http://placehold.it/150x150" alt="..." >
+                            </div>
+                            <div class="floatLeft leftPhotoPanelPhoto">
+                                <img src="http://placehold.it/150x150" alt="..." >
+                            </div>
+                            <div class="floatLeft leftPhotoPanelPhoto">
+                                <img src="http://placehold.it/150x150" alt="..." >
+                            </div>
+                            <div class="floatLeft leftPhotoPanelPhoto">
+                                <img src="http://placehold.it/150x150" alt="..." >
+                            </div>
+                            <div class="floatLeft leftPhotoPanelPhoto">
+                                <img src="http://placehold.it/150x150" alt="..." >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--About user, left panel-->
+                <div class="panel aboutUser">
+                    <div class="panelTitle leftPanelTitle">
+                        <div class="floatLeft">
+                            <img src="http://placehold.it/30x30" alt="..." class="img-circle">
+                        </div>
+                        <div class="floatLeft">
+                            <h4>About me</h4>
+                        </div>
+                        <div style="clear:both"></div>
+
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--rightPanels-->
+            <div class="rightPanels col-md-8">
+
+                <div class="panel newPostPanel">
+                    <div class="postType">
+                        <ul>
+                            <li>Text</li>
+                            <li>Photo</li>
+                        </ul>
+                    </div>
+                    <div>
+                        text
+                    </div>
+
+                </div>
+
+                <div class="panel">
+                    <div class="panelTitle">
+                        <div class="floatLeft">
+                            <img src="http://placehold.it/60x60" alt="..." class="img-circle">
+                        </div>
+                        <div class="floatLeft postTitle">
+                            <h3>
+                            <a href="#"><span class="postUserName">Jan Kowalski</span></a>
+                            </h3>
+                            <h6>
+                                <span class="postDate">1 March 2017</span>
+                                <span>·</span>
+                                <span class="postLocale">Ateny, Region Attyka, Grecja</span>
+                                <span>·</span>
+                            </h6>
+                        </div>
+                    </div>
+                    <p class="panelText"> Nie została wyeliminowana przez dobór naturalny, lecz częstotliwość jej występowania stale rośnie.
+                        Prawdopodobnie ma to związek ze zmniejszaniem się habitatu arktycznego, co spowodowane jest ocieplaniem się klimatu.
+                        Drapieżniki o jasnym umaszczeniu występują rzadko poza obszarem tundry, ponieważ ich futro nie zapewnia im tam kamuflażu.</p>
+                    <img class="panelImage" src="http://placehold.it/1600x2000" alt="...">
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#uploadModal">
+        Launch demo modal
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i></button>
+                    <h4 class="modal-title" id="myModalLabel"><i class="fa fa-upload" aria-hidden="true"></i> Upload files</h4>
+                </div>
+                <form th:action="@{/upload}" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="file" name="file" />
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script th:if = "${currentUser.isProfileOwner()}" type = "text/javascript" th:src = "@{/js/profileOwner.js}" src ="../../public/js/profileOwner.js"></script>
+
+    </body>
+</html>

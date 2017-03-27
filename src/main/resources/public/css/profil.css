@@ -1,0 +1,222 @@
+/** {*/
+    /*border: 1px dashed green;*/
+/*}*/
+body {
+    background-color: #e9ebee;
+}
+.container {
+    padding: 0;
+}
+.clear {
+    clear: both;
+}
+.row {
+    width: inherit;
+    margin: 0;
+}
+.floatLeft {
+    float: left;
+}
+.floatRight {
+    float: left;
+}
+
+/*profileTop, backgroundImage, profileImage, name*/
+#profileTop {
+    width: inherit;
+    position: relative;
+    height: 300px;
+}
+#backgroundImageWrapper {
+    width: 100%;
+    height: inherit;
+}
+#backgroundImage {
+    width: inherit;
+    height: inherit;
+    position: relative;
+    opacity: 0.3;
+    margin: 0;
+}
+@media(max-width: 768px) {
+    #backgroundImage {
+        width: 100%;
+    }
+}
+#profileImage {
+    position:absolute;
+    left: 5%;
+    bottom: -20px;
+    width: 210px;
+    height: 210px;
+}
+#profileNameWrapper {
+    font-weight: 700;
+    font-size: 25pt;
+    position: absolute;
+    bottom: 2%;
+    left: calc(200px + 5% + 20px);
+    display: block;
+}
+
+/*profileMenu*/
+#profileMenu {
+    height: 50px;
+    background-color: white;
+    border: 1px solid;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-top: none;
+}
+.menuOption {
+    color: #0091EA;
+    height: inherit;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12pt;
+    font-weight: 600;
+    border-left: 1px solid #e9eaed;
+}
+.menuOption:hover {
+    background-color: #f6f7f9;
+    border-bottom: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+}
+#optionWrapper {
+    height: inherit;
+    margin-left: calc(200px + 5% + 20px);
+}
+#optionWrapper > .menuOption:last-child {
+    border-right: 1px solid #e9eaed;
+}
+
+/*panel*/
+.panel {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid ;
+    border-radius: 3px;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    display: block;
+    padding: 10px;
+}
+.panel > div {
+    position: relative;
+}
+
+/*leftPanel*/
+.panelTitle {
+    font-size: 12pt;
+    color: #4b4f56;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+.panelImage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.panelName {
+    height: 100%;
+}
+.panelText {
+    margin-top:10px;
+    margin-bottom: 5px;
+}
+.leftPanels > .panel > .panelTitle {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+}
+.leftPanels > .panel > .panelTitle > div > h4 {
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.leftPhotoPanel {
+    margin-top: 20px;
+}
+.leftPhotoPanelPhoto {
+    width: 33%;
+    height: 33%;
+    padding: 1px;
+}
+.leftPhotoPanelPhoto > img {
+    width: 100%;
+    height: 100%;
+
+}
+.postTitle {
+    padding-top: 5px;
+    margin-left: 5px;
+}
+.postTitle > h3 {
+    margin: 0;
+    padding: 0;
+}
+.postTitle > h6 {
+    margin: 0;
+    color: #90949c;
+}
+.postDate:hover {
+    text-decoration: underline;
+}
+.postLocale:hover {
+    text-decoration: underline;
+}
+.postButton {
+    border: 1px solid grey;
+    width: auto;
+}
+.postUserName {
+    color: #365899;
+    font-size: 14pt;
+    font-weight: 600;
+}
+.postUserName:hover {
+    text-decoration: underline;
+}
+
+
+
+@media(min-width:769px){
+    .leftPanels {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .rightPanels {
+        padding-right: 0;
+    }
+}
+
+hr {
+    margin: 2px 0;
+}
+
+/*upload modal*/
+.close{
+    color: #fff;
+    opacity: 1;
+}
+.close:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+#uploadModal > .modal-dialog .modal-header {
+    background-color: #4267b2;
+    color: #fff;
+}
+#uploadModal > .modal-dialog > .modal-content {
+    border-radius: 0;
+
+}
+
+
+
+

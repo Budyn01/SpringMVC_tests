@@ -1,0 +1,64 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 101 Template</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" href="../../public/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/login.css}" href="../../public/css/newregister.css" rel="stylesheet">
+
+    <script src="../../public/lib/angular.min.js"></script>
+</head>
+<body>
+
+
+
+    <div class="container">
+        <div>
+            <h1>Account Details</h1>
+            <hr>
+            <form>
+                <input type="email" placeholder="Email Address">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Password">
+                <input>
+                <input>
+            </form>
+        </div>
+        <div>
+            <h1>Personal Details</h1>
+            <hr>
+            <form>
+
+                <label for="first_name">First name:</label>
+                <input id="first_name" type="text" placeholder="First name">
+
+                <label for="surname">Surname:</label>
+                <input id="surname" type="text" placeholder="Surname">
+
+                <label for="age">Age:</label>
+                <input id="age" type="number" placeholder="age">
+
+                <label for="address">Address:</label>
+                <input id="address" type="text" placeholder="Address">
+
+                <label for="country">Country:</label>
+                <input id="country" type="text" placeholder="Country">
+
+                <label for="city">City:</label>
+                <input id="city" type="text" placeholder="City">
+
+                <label for="post_code">Post Code:</label>
+                <input id="post_code" type="text" placeholder="Post code">
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/index.css}" href="../public/css/index.css" rel="stylesheet"/>
+    <link th:href="@{/css/login.css}" href="../public/css/login.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="container text-center">
+
+        <span th:if="!${isUserLogged}"><a href="/login"><button class="btn btn-danger fBtn" >Login</button></a></span>
+        <span th:if="${isUserLogged}"><form style="display:inline" th:action="@{/logout}" method="post">
+            <button class="btn btn-danger fBtn">Logout</button>
+        </form></span>
+        <span th:if="${currentUser?.isAdmin()}"> <a th:href="@{/dashboard}"><button class="btn btn-danger">Dashboard</button></a></span>
+        <a th:href="@{/register}"><button class="btn btn-danger">Register User</button></a>
+
+        <div class="text-left" th:if="${isUserLogged}">
+            <h4 th:text="'Logged as: '  + ${currentUser?.username}"></h4>
+            <h4 th:text="'Enabled: ' + ${currentUser?.enabled}"></h4>
+            <h4 th:text="'AccountNonExpired: ' + ${currentUser?.accountNonExpired}"></h4>
+            <h4 th:text="'CredentialsNonExpired: ' + ${currentUser?.credentialsNonExpired}"></h4>
+            <h4 th:text="'AccountNonLocked: ' + ${currentUser?.accountNonLocked}"></h4>
+            <h4 th:text="'Granted Authorities: '  + ${currentUser?.getAuthoritiesNames()}"></h4>
+            <h6 th:text="${currentUser}">User</h6>
+        </div>
+
+        <div>kolos.Status:
+            <span th:if="${isLogged} == null">
+                user not logged,
+            </span>
+            <span th:if="${isLogged}">
+                user logged,
+            </span>
+            <span th:if="${currentUser?.isAdmin()}">
+                has role admin,
+            </span>
+            <span th:if="${currentUser?.isUser()}">
+                has role user
+            </span>
+        </div>
+    </div>
+</body>
+</html>

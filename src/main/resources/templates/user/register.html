@@ -1,0 +1,47 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 101 Template</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" href="../../public/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/login.css}" href="../../public/css/login.css" rel="stylesheet">
+
+    <script src="../../public/lib/angular.min.js"></script>
+</head>
+<body>
+
+
+
+<div class="container">
+
+    <form ng-app="registerForm" ng-controller="myCtrl" class="form-signin" th:action="@{/register}" method="post" th:object="${userCreateForm}" novalidate>
+        <h2 class="form-signin-heading">Register User</h2>
+
+        <label for="email" class="sr-only">Email address:</label>
+        <input th:field="*{email}" name="email" type="email" class="form-control" placeholder="Email Address" required>
+
+        <label for="name" class="sr-only">Name:</label>
+        <input th:field="*{name}" name="name" type="text" class="form-control" placeholder="Name" required>
+
+        <label for="surname" class="sr-only">Surname</label>
+        <input th:field="*{surname}" name="surname" type="text" class="form-control" placeholder="Surname" required>
+
+        <label for="password" class="sr-only">Password:</label>
+        <input th:field="*{password}" name="password" type="password" class="form-control" placeholder="Password" required>
+
+        <label for="passwordRepeat" class="sr-only">Repeat Password:</label>
+        <input th:field="*{passwordRepeated}" name="passwordRepeat" type="password" class="form-control" placeholder="Repeat Password" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register User</button>
+    </form>
+</div>
+
+<script th:src="@{/js/register.js}" src="../../public/js/register.js"></script>
+</body>
+</html>

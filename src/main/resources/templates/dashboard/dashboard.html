@@ -1,0 +1,73 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+</head>
+<body>
+
+<!--TopBar-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">OverPower Project</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right" th:action="@{/logout}" method="post">
+                <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!--SideBar-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li th:class="(${viewName} == 'dashboard/employee')? 'active' : ''" class="active"><a href="#" th:href="@{employee}">Employees<span class="sr-only">(current)</span></a></li>
+                <li th:class="(${viewName} == 'dashboard/job')? 'active' : ''"><a href="#" th:href="@{job}">Jobs</a></li>
+                <!--<li><a href="#">Analytics</a></li>-->
+                <!--<li><a href="#">Export</a></li>-->
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li th:class="(${viewName} == 'dashboard/users')? 'active' : ''"> ><a href="#" th:href="@{users}">Users</a></li>
+                <li><a href="">Users List</a></li>
+                <!--<li><a href="">One more nav</a></li>-->
+                <!--<li><a href="">Another nav item</a></li>-->
+                <!--<li><a href="">More navigation</a></li>-->
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a  th:text="'Logged as ' + ${currentUser.username}" href="">Username</a></li>
+                <!--<li><a href="">One more nav</a></li>-->
+                <!--<li><a href="">Another nav item</a></li>-->
+            </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div th:replace="${viewName} :: data">
+                Content
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

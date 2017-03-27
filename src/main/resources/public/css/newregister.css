@@ -1,0 +1,49 @@
+* {
+    border: 1px dotted grey;
+}
+.small {
+    width: 100px;
+    height: 100px;
+}
+.medium {
+    width: 200px;
+    height: 200px;
+}
+.big {
+    width: 300px;
+    height: 300px;
+}
+.red {
+    background-color: red;
+}
+.yellow {
+    background-color: yellow;
+}
+.blue {
+    background-color: blue;
+}
+.floatLeft {
+    float: left;
+}
+.clearFix {
+    clear:both;
+}
+.inside {
+    border: 1px solid black;
+    position: relative;
+    display: inline-block;
+
+}
+#boxText {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid grey;
+    border-radius: 3px;
+
+}
+h1 {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+}

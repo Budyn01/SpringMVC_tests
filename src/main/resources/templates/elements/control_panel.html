@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" href="../../public/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div th:fragment="controlPanel">
+        <div class="btn-group" role="group" aria-label="...">
+            <a th:href="@{/login}"><button type="button" class="btn btn-primary">Left</button></a>
+            <form th:action="@{/logout}" method="post"><button type="button" class="btn btn-primary">Middle</button></form>
+            <a th:href="@{/dashboard}"><button type="button" class="btn btn-primary">Right</button></a>
+        </div>
+    </div>
+</body>
+</html>
